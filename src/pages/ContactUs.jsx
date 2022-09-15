@@ -20,7 +20,7 @@ const ContactUs = () => {
       <div>
         <div className="mt-[30px] ">
           <div className="flex justify-center p-5">
-            <span className="text-4xl font-bold border-b-4 border-blue-500 header-font">
+            <span className="text-4xl font-bold border-b-4 border-black header-font">
               Contact Us
             </span>
           </div>
