@@ -1,0 +1,105 @@
+.toggler-wrapper {
+  display: block;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggler-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.toggler-wrapper input[type="checkbox"]:checked + .toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: #ccc;
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.toggler-wrapper.checkbox-style {
+  width: 54px;
+  height: 30px;
+}
+
+.toggler-wrapper.checkbox-style
+  input[type="checkbox"]:checked
+  + .toggler-slider
+  .toggler-knob:before {
+  top: 100%;
+}
+
+.toggler-wrapper.checkbox-style
+  input[type="checkbox"]:checked
+  + .toggler-slider
+  .toggler-knob:after {
+  top: 3px;
+}
+
+.toggler-wrapper.checkbox-style .toggler-knob {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.toggler-wrapper.checkbox-style .toggler-knob:before {
+  content: "No";
+  position: absolute;
+  width: calc(30px - 6px);
+  height: calc(30px - 6px);
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  background-color: #fff;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 75%;
+  font-weight: 500;
+}
+
+.toggler-wrapper.checkbox-style .toggler-knob:after {
+  content: "Yes";
+  position: absolute;
+  width: calc(30px - 6px);
+  height: calc(30px - 6px);
+  border-radius: 50%;
+  right: 3px;
+  top: 100%;
+  background-color: #fff;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 75%;
+  font-weight: 500;
+}
