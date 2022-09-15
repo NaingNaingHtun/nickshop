@@ -116,7 +116,7 @@ const Products = ({ filters }) => {
                 onChange={(e) => setCurrentPageNumber(Number(e.target.value))}
               />
             </div>
-            {pagesRefs.length > 5 ? (
+            {pagesRefs.length > 10 ? (
               <React.Fragment>
                 <button
                   className="px-2 py-1 border-[1px]"
