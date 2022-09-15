@@ -13,4 +13,5 @@ This project was mainly created with React, Node, Express and MongoDB. It is a s
 - Spring.js
 - JSONWebToken
 - and others react components libraries
-  No payment method is addded to this project so feel free to test it yourself.
+
+No payment method is addded to this project so feel free to test it yourself.
