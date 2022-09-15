@@ -7,9 +7,11 @@ import { useLocation } from "react-router-dom";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 const Products = ({ filters }) => {
   const [products, setProducts] = useState([]);
+  console.log(products.length);
   const [currentProducts, setCurrentProducts] = useState([]);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const pagesCount = Math.round(products.length / 8 + 0.9);
+
+  const pagesCount = Math.round(products.length / 8 + 0.4);
   let pagesRefs = [];
   pagesRefs.length = pagesCount;
   pagesRefs.fill(0);
@@ -70,11 +72,17 @@ const Products = ({ filters }) => {
             </div>
           ))}
         </div>
-      ) : products.length === 0 ? ( //loading
-        <div className="w-full justify-center p-5 flex items-center text-red-500">
-          <ReportProblemIcon />
-          <span>Please check your internet connection and try again.</span>
-        </div>
+      ) : products.length === 0 ? (
+        path === "/products" ? (
+          <div className="w-full justify-center p-5 flex items-center">
+            No Item Exit
+          </div> //loading
+        ) : (
+          <div className="w-full justify-center p-5 flex items-center text-red-500">
+            <ReportProblemIcon />
+            <span>Please check your internet connection and try again.</span>
+          </div>
+        )
       ) : (
         <div>
           <div
@@ -108,19 +116,139 @@ const Products = ({ filters }) => {
                 onChange={(e) => setCurrentPageNumber(Number(e.target.value))}
               />
             </div>
-            {pagesRefs.length > 10 ? (
+            {pagesRefs.length > 5 ? (
               <React.Fragment>
-                <button>Previous</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <span>...</span>
-                <button>{pagesRefs.length - 3}</button>
-                <button>{pagesRefs.length - 2}</button>
-                <button>{pagesRefs.length - 1}</button>
-                <button>{pagesRefs.length}</button>
-                <button>Next</button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  onClick={() =>
+                    setCurrentPageNumber((previousPageNumber) => {
+                      if (previousPageNumber - 1 === 0) {
+                        return 1;
+                      } else {
+                        return previousPageNumber - 1;
+                      }
+                    })
+                  }
+                >
+                  Prev
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor: currentPageNumber === 1 ? "blue" : "white",
+                    color: currentPageNumber === 1 ? "white" : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(1)}
+                >
+                  1
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor: currentPageNumber === 2 ? "blue" : "white",
+                    color: currentPageNumber === 2 ? "white" : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(2)}
+                >
+                  2
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor: currentPageNumber === 3 ? "blue" : "white",
+                    color: currentPageNumber === 3 ? "white" : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(3)}
+                >
+                  3
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor: currentPageNumber === 4 ? "blue" : "white",
+                    color: currentPageNumber === 4 ? "white" : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(4)}
+                >
+                  4
+                </button>
+                <span className="text-4xl">...</span>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor:
+                      currentPageNumber === pagesRefs.length - 3
+                        ? "blue"
+                        : "white",
+                    color:
+                      currentPageNumber === pagesRefs.length - 3
+                        ? "white"
+                        : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(pagesRefs.length - 3)}
+                >
+                  {pagesRefs.length - 3}
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor:
+                      currentPageNumber === pagesRefs.length - 2
+                        ? "blue"
+                        : "white",
+                    color:
+                      currentPageNumber === pagesRefs.length - 2
+                        ? "white"
+                        : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(pagesRefs.length - 2)}
+                >
+                  {pagesRefs.length - 2}
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor:
+                      currentPageNumber === pagesRefs.length - 1
+                        ? "blue"
+                        : "white",
+                    color:
+                      currentPageNumber === pagesRefs.length - 1
+                        ? "white"
+                        : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(pagesRefs.length - 1)}
+                >
+                  {pagesRefs.length - 1}
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  style={{
+                    backgroundColor:
+                      currentPageNumber === pagesRefs.length ? "blue" : "white",
+                    color:
+                      currentPageNumber === pagesRefs.length
+                        ? "white"
+                        : "black",
+                  }}
+                  onClick={() => setCurrentPageNumber(pagesRefs.length)}
+                >
+                  {pagesRefs.length}
+                </button>
+                <button
+                  className="px-2 py-1 border-[1px]"
+                  onClick={() =>
+                    setCurrentPageNumber((previousPageNumber) => {
+                      if (previousPageNumber + 1 > pagesRefs.length) {
+                        return pagesRefs.length;
+                      } else {
+                        return previousPageNumber + 1;
+                      }
+                    })
+                  }
+                >
+                  Next
+                </button>
               </React.Fragment>
             ) : (
               pagesRefs.map((pageRef, index) => (
