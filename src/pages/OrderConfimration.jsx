@@ -9,9 +9,9 @@ const OrderConfimration = () => {
     <React.Fragment>
       <Navbar />
       <div className="h-16"></div>
-      <div className="flex flex-col gap-3 justify-center items-center w-full h-[50vh]">
-        <div>Your order is confirmed.</div>
-        <div className="text-blue-500 text-2xl">
+      <div className="flex flex-col gap-3 justify-center items-center w-full h-[100vh]">
+        <div className="text-lg">Your order is confirmed.</div>
+        <div className="text-blue-500 text-4xl">
           Thanks For Shopping With Us
         </div>
         <Link to="/products" className="underline">

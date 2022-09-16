@@ -25,8 +25,6 @@ const SearchModal = ({ open, onClose }) => {
   const [loading, setLoading] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  // //make scroll disabled effect
-  // document.body.style.overflow = open ? "hidden" : "scroll";
 
   const getTitles = async () => {
     const res = await api.get(
@@ -113,6 +111,7 @@ const SearchModal = ({ open, onClose }) => {
 const Navbar = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
+  console.log("user", user);
   const authenticatedUser = useSelector(
     (state) => state.user.authenticatedUser
   );
@@ -228,9 +227,9 @@ const Navbar = () => {
 
           <div className="flex justify-end items-center ">
             <div className="flex justify-end gap-2 md:gap-5 items-center">
-              {!authenticatedUser && (
+              {!authenticatedUser && !user && (
                 <Link to="/login" className="hidden lg:block">
-                  REGISTER / SIGN IN
+                  Sign In / Sign Up
                 </Link>
               )}
 
@@ -240,7 +239,7 @@ const Navbar = () => {
                 </Link>
               </Badge>
               <div>
-                {authenticatedUser && (
+                {authenticatedUser && user && (
                   <React.Fragment>
                     <AccountCircleRoundedIcon
                       fontSize="large"
@@ -322,7 +321,7 @@ const Navbar = () => {
                   </MenuItem>
                   {!authenticatedUser && !user && (
                     <MenuItem>
-                      <Link to="/login">Sign In / Register</Link>
+                      <Link to="/login">Sign In / Sign Up</Link>
                     </MenuItem>
                   )}
                 </ControlledMenu>
