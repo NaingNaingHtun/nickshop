@@ -5,7 +5,7 @@ import PrimaryButton from "../components/PrimaryButton";
 import NewsLetter from "../components/NewsLetter";
 import { useDispatch, useSelector } from "react-redux";
 import ShoppingCartItem from "../components/ShoppingCartItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../api";
 import { clearCart } from "../slices/cartSlice";
 const formatMoney = (amount) => {
@@ -17,6 +17,7 @@ const formatMoney = (amount) => {
   return strTotal;
 };
 const ShoppingCart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user.currentUser);
@@ -30,7 +31,7 @@ const ShoppingCart = () => {
   const checkout = async () => {
     if (!user) {
       //if the user is not logged in then we need them creat a new account or login, so redirect them to the login page
-      window.location.href = "nickshop/#/login";
+      navigate("/login");
     }
 
     let orderTotal = 0; //initial order total
