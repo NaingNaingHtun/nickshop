@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Register from "../components/Register";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import SignIn from "../components/SignIn";
 import { useSelector } from "react-redux";
 const Authentication = () => {
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user.currentUser);
   const authenticatedUser = useSelector(
     (state) => state.user.authenticatedUser
@@ -24,7 +25,7 @@ const Authentication = () => {
   //They don't need to go to the login page
   useEffect(() => {
     if (user && authenticatedUser) {
-      window.location.href = "/products";
+      navigate("/products");
     }
   }, [user, authenticatedUser]);
   return (
