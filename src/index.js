@@ -23,20 +23,56 @@ root.render(
       <PersistGate persistor={persistor} loading={null}>
         <Router>
           <Routes>
-            <Route path="/" exact element={<App />} />
-            <Route path="/product/:id" exact element={<SingleProduct />} />
-            <Route path="/products" exact element={<ProductsList />} />
-            <Route path="/cart" exact element={<ShoppingCart />} />
-            <Route path="/register" exact element={<Authentication />} />
-            <Route path="/login" exact element={<Authentication />} />
             <Route
-              path="/order-confirmation"
+              path="https://naingnainghtun.github.io/"
+              exact
+              element={<App />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/product/:id"
+              exact
+              element={<SingleProduct />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/products"
+              exact
+              element={<ProductsList />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/cart"
+              exact
+              element={<ShoppingCart />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/register"
+              exact
+              element={<Authentication />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/login"
+              exact
+              element={<Authentication />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/order-confirmation"
               exact
               element={<OrderConfimration />}
             />
-            <Route path="/wishlist" exact element={<WishList />} />
-            <Route path="/contact-us" exact element={<ContactUs />} />
-            <Route path="/about-us" exact element={<AboutUs />} />
+            <Route
+              path="https://naingnainghtun.github.io/wishlist"
+              exact
+              element={<WishList />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/contact-us"
+              exact
+              element={<ContactUs />}
+            />
+            <Route
+              path="https://naingnainghtun.github.io/about-us"
+              exact
+              element={<AboutUs />}
+            />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
