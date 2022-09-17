@@ -53,7 +53,6 @@ const ProductsList = () => {
   ];
   const query = useQuery();
   const title = query.get("title") ? query.get("title") : "";
-  console.log("title: ", title);
   const [size, setSize] = useState(prevFilters.size ? prevFilters.size : "");
   const [sorting, setSorting] = useState(
     prevFilters.sorting

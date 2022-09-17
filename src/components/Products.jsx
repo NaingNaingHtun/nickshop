@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 const Products = ({ filters }) => {
   const [products, setProducts] = useState([]);
-  console.log(products.length);
   const [currentProducts, setCurrentProducts] = useState([]);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
