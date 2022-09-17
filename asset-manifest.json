@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/nickshop/static/css/main.b507449c.css",
-    "main.js": "/nickshop/static/js/main.aa6930a6.js",
+    "main.js": "/nickshop/static/js/main.bd3af905.js",
     "static/media/what-we-offer.svg": "/nickshop/static/media/what-we-offer.b871ba3d9497692aba7beba9584efe7e.svg",
     "static/media/who-we-are.svg": "/nickshop/static/media/who-we-are.107cd94d36802e5b3b77d41d63ff5607.svg",
     "index.html": "/nickshop/index.html",
     "main.b507449c.css.map": "/nickshop/static/css/main.b507449c.css.map",
-    "main.aa6930a6.js.map": "/nickshop/static/js/main.aa6930a6.js.map"
+    "main.bd3af905.js.map": "/nickshop/static/js/main.bd3af905.js.map"
   },
   "entrypoints": [
     "static/css/main.b507449c.css",
-    "static/js/main.aa6930a6.js"
+    "static/js/main.bd3af905.js"
   ]
 }
