@@ -54,7 +54,7 @@ const ShoppingCart = () => {
       })
       .then((res) => {
         //after successfully making a new order, clear user shopping cart and redirect them to the order confirmation page
-        window.location.href = "/order-confirmation";
+        navigate("/order-confirmation");
         dispatch(clearCart());
       })
       .catch((err) => {
@@ -80,9 +80,9 @@ const ShoppingCart = () => {
           </div>
           <div className="h-full flex flex-col justify-center items-center">
             <h1 className="text-xl font-bold">Your Shopping Cart is Empty</h1>
-            <a href="/products" className="underline">
+            <Link to="/products" className="underline">
               Start Adding Some
-            </a>
+            </Link>
           </div>
         </div>
       ) : (
@@ -94,9 +94,9 @@ const ShoppingCart = () => {
           <div className="flex">
             <div className="w-full md:flex-[2.5]">
               <div className="w-full flex justify-between p-1">
-                <a href="/products" className="underline">
+                <Link to="/products" className="underline">
                   Continue Shopping
-                </a>
+                </Link>
                 <span>
                   <b>Price:</b>
                   <span className="ml-2">$ {formatMoney(total)}</span>

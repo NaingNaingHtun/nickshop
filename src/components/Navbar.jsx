@@ -139,7 +139,7 @@ const Navbar = () => {
     dispatch(clearFilter());
     dispatch(clearCart());
     dispatch(emptyList());
-    window.location.href = "/";
+    navigate("/");
   };
   //open user info profile modal
   const openUserModal = () => {
@@ -203,23 +203,23 @@ const Navbar = () => {
               onMouseLeave={() => setOpenCategories(false)}
               onClose={() => setOpenCategories(false)}
             >
-              <MenuItem>
-                <Link to="/products/?title=hat">Hat</Link>
+              <MenuItem onClick={() => navigate("/products/?title=hat")}>
+                Shoe
               </MenuItem>
-              <MenuItem>
-                <Link to="/products/?title=glasses">Glasses</Link>
+              <MenuItem onClick={() => navigate("/products/?title=glasses")}>
+                Glasses
               </MenuItem>
-              <MenuItem>
-                <Link to="/products/?title=coat">Coat</Link>
+              <MenuItem onClick={() => navigate("/products/?title=coat")}>
+                Coat
               </MenuItem>
-              <MenuItem>
-                <Link to="/products/?title=shirt">Shirt</Link>
+              <MenuItem onClick={() => navigate("/products/?title=shirt")}>
+                Shirt
               </MenuItem>
-              <MenuItem>
-                <Link to="/products/?title=pant">Pant</Link>
+              <MenuItem onClick={() => navigate("/products/?title=pant")}>
+                Pant
               </MenuItem>
-              <MenuItem>
-                <Link to="/products/?title=shoe">Shoe</Link>
+              <MenuItem onClick={() => navigate("/products/?title=shoe")}>
+                Shoe
               </MenuItem>
             </ControlledMenu>
           </div>
@@ -289,38 +289,40 @@ const Navbar = () => {
                   state={openMenu ? "open" : "closed"}
                   onClose={() => setOpenMenu(false)}
                 >
-                  <MenuItem>
-                    <Link to="/">Home</Link>
-                  </MenuItem>
+                  <MenuItem onClick={() => navigate("/")}>Home</MenuItem>
                   <SubMenu label="Products">
-                    <MenuItem>
-                      <Link to="/products/?title=hat">Hats</Link>
+                    <MenuItem onClick={() => navigate("/products/?title=hat")}>
+                      Shoe
                     </MenuItem>
-                    <MenuItem>
-                      <Link to="/products/?title=glasses">Glasseses</Link>
+                    <MenuItem
+                      onClick={() => navigate("/products/?title=glasses")}
+                    >
+                      Glasses
                     </MenuItem>
-                    <MenuItem>
-                      <Link to="/products/?title=coat">Coats</Link>
+                    <MenuItem onClick={() => navigate("/products/?title=coat")}>
+                      Coat
                     </MenuItem>
-                    <MenuItem>
-                      <Link to="/products/?title=shirt">Shirts</Link>
+                    <MenuItem
+                      onClick={() => navigate("/products/?title=shirt")}
+                    >
+                      Shirt
                     </MenuItem>
-                    <MenuItem>
-                      <Link to="/products/?title=pant">Pants</Link>
+                    <MenuItem onClick={() => navigate("/products/?title=pant")}>
+                      Pant
                     </MenuItem>
-                    <MenuItem>
-                      <Link to="/products/?title=shoe">Shoes</Link>
+                    <MenuItem onClick={() => navigate("/products/?title=shoe")}>
+                      Shoe
                     </MenuItem>
                   </SubMenu>
-                  <MenuItem>
-                    <Link to="/contact-us">Contact Us</Link>
+                  <MenuItem onClick={() => navigate("/contact-us")}>
+                    Contact Us
                   </MenuItem>
-                  <MenuItem>
-                    <Link to="/about-us">About Us</Link>
+                  <MenuItem onClick={() => navigate("/about-us")}>
+                    About Us
                   </MenuItem>
                   {!authenticatedUser && !user && (
-                    <MenuItem>
-                      <Link to="/login">Sign In / Sign Up</Link>
+                    <MenuItem onClick={() => navigate("/login")}>
+                      Sign In/Sign Up
                     </MenuItem>
                   )}
                 </ControlledMenu>

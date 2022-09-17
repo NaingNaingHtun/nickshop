@@ -78,7 +78,7 @@ const Home = () => {
         <div className="absolute flex flex-col gap-5 justify-center items-start p-5 md:p-[50px] top-0 left-0 w-[100%] h-[100%] ">
           <Trail open={open}>
             <span>
-              H,{" "}
+              Hi,{" "}
               {localeTime.split(" ")[1] === "AM"
                 ? "Good Morning"
                 : "Good Evening"}

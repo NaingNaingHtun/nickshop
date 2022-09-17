@@ -2,7 +2,8 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
-
+import { ReactComponent as WhoWeAreSvg } from "./who-we-are.svg";
+import { ReactComponent as WhatWeOfferSvg } from "./what-we-offer.svg";
 const AboutUs = () => {
   return (
     <React.Fragment>
@@ -21,10 +22,7 @@ const AboutUs = () => {
               style={{ boxShadow: "-12px 12px 0px -2px gray" }}
             >
               <h1 className="text-4xl header-font">Who We Are?</h1>
-              <img
-                src="/images/who-we-are.svg"
-                className="w-[150px] h-[150px]"
-              />
+              <WhoWeAreSvg width="150" height="150" />
             </div>
           </div>
           <div className="w-full md:w-[500px] h-[300px] md:h-[400px] flex justify-center items-center p-2">
@@ -42,10 +40,7 @@ const AboutUs = () => {
               style={{ boxShadow: "-12px 12px 0px -2px gray" }}
             >
               <h1 className="text-4xl header-font">What We Offer</h1>
-              <img
-                src="/images/what-we-offer.svg"
-                className="w-[150px] h-[150px]"
-              />
+              <WhatWeOfferSvg width="150" height="150" />
             </div>
           </div>
           <div className="w-full md:w-[500px] h-[300px] md:h-[400px] flex justify-center items-center p-2">

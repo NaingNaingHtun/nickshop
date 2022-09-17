@@ -29,12 +29,11 @@ const SignIn = () => {
           accessToken: user.accessToken,
         })
         .then(() => {
-          window.location.href = "/products";
+          navigate("/products");
           dispatch(updateUserAuthenticationStatus({ isAuthenticated: true }));
         })
         .catch(() => {
           navigate("/login");
-          console.log("navigate to login");
         });
     };
 
