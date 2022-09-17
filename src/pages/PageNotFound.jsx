@@ -8,7 +8,7 @@ const PageNotFound = () => {
       <p className="text-2xl">
         Oops! Something Went Wrong. The page you are looking is not found.
       </p>
-      <Link to="/" className="underline">
+      <Link to="https://naingnainghtun.github.io/" className="underline">
         Go To Home
       </Link>
     </div>
