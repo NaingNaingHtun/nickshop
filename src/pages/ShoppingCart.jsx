@@ -30,7 +30,7 @@ const ShoppingCart = () => {
   const checkout = async () => {
     if (!user) {
       //if the user is not logged in then we need them creat a new account or login, so redirect them to the login page
-      window.location.href = "/login";
+      window.location.href = "nickshop/#/login";
     }
 
     let orderTotal = 0; //initial order total
