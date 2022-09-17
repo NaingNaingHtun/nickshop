@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/nickshop/static/css/main.b507449c.css",
-    "main.js": "/nickshop/static/js/main.b897a1e3.js",
+    "main.js": "/nickshop/static/js/main.d3abf0c2.js",
     "index.html": "/nickshop/index.html",
     "main.b507449c.css.map": "/nickshop/static/css/main.b507449c.css.map",
-    "main.b897a1e3.js.map": "/nickshop/static/js/main.b897a1e3.js.map"
+    "main.d3abf0c2.js.map": "/nickshop/static/js/main.d3abf0c2.js.map"
   },
   "entrypoints": [
     "static/css/main.b507449c.css",
-    "static/js/main.b897a1e3.js"
+    "static/js/main.d3abf0c2.js"
   ]
 }
