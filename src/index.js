@@ -23,7 +23,6 @@ root.render(
       <PersistGate persistor={persistor} loading={null}>
         <Router>
           <Routes>
-            <Route path="/" exact element={<App />} />
             <Route path="/product/:id" exact element={<SingleProduct />} />
             <Route path="/products" exact element={<ProductsList />} />
             <Route path="/cart" exact element={<ShoppingCart />} />
