@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { Avatar, Badge, CircularProgress } from "@mui/material";
+import { Avatar, Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -111,7 +111,6 @@ const SearchModal = ({ open, onClose }) => {
 const Navbar = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
-  console.log("user", user);
   const authenticatedUser = useSelector(
     (state) => state.user.authenticatedUser
   );

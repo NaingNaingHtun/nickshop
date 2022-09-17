@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="flex flex-col md:flex-row h-[40vh] bg-white py-5 md:py-5">
+    <div className="flex flex-col">
+      <div className="flex flex-col md:flex-row md:h-[40vh] bg-white py-5 md:py-5">
         <div className="flex-1 p-5 flex flex-col gap-6">
           <h1 className="text-4xl tracking-widest font-bold logo-font">
             Nick Shop
@@ -75,7 +75,6 @@ const Footer = () => {
             <MailIcon fontSize="medium" />
             naingnainghtun984@gmail.com
           </div>
-          <div></div>
         </div>
       </div>
       <div className="p-5">
