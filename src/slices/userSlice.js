@@ -3,7 +3,6 @@ import api from "../api";
 //login asynchronous thunk
 export const login = createAsyncThunk("user/login", async (user, thunkAPI) => {
   const res = await api.post("/auth/login", user);
-  console.log(res.data);
   return res.data;
 });
 const userSlice = createSlice({

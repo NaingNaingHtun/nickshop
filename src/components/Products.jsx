@@ -17,7 +17,6 @@ const Products = ({ filters }) => {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
   const path = useLocation().pathname;
-
   //get all the products everytime filters changed
   useEffect(() => {
     const getProducts = async () => {
@@ -72,7 +71,7 @@ const Products = ({ filters }) => {
           ))}
         </div>
       ) : products.length === 0 ? (
-        path === "/products" ? (
+        path === "/products/" ? (
           <div className="w-full justify-center p-5 flex items-center">
             No Item Exit
           </div> //loading

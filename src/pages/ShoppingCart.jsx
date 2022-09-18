@@ -32,6 +32,7 @@ const ShoppingCart = () => {
     if (!user) {
       //if the user is not logged in then we need them creat a new account or login, so redirect them to the login page
       navigate("/login");
+      return null;
     }
 
     let orderTotal = 0; //initial order total
