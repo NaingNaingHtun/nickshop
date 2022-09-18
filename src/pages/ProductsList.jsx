@@ -7,7 +7,6 @@ import "react-dropdown/style.css";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 import useQuery from "../hook/useQuery";
-import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { updateFilter } from "../slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -75,7 +74,6 @@ const ProductsList = () => {
           value: "",
         }
   );
-  // console.log("category: " + category.value);
   let filters = {
     size,
     for: peopleType.value,
@@ -84,23 +82,6 @@ const ProductsList = () => {
     sorting: sorting.value,
   };
 
-  // useEffect(() => {
-  //   if (title) {
-  //     setCategory({ label: "All Categories", value: "" });
-  //   } else {
-  //     setCategory(
-  // prevFilters.category
-  //   ? {
-  //       label: capitalize(prevFilters.category),
-  //       value: prevFilters.category,
-  //     }
-  //   : {
-  //       label: "All Categories",
-  //       value: "",
-  //     }
-  //     );
-  //   }
-  // }, [title]);
   useEffect(() => {
     dispatch(updateFilter(filters));
   }, [filters]);

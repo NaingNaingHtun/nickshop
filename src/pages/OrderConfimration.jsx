@@ -11,7 +11,7 @@ const OrderConfimration = () => {
       <div className="h-16"></div>
       <div className="flex flex-col gap-3 justify-center items-center w-full h-[100vh]">
         <div className="text-lg">Your order is confirmed.</div>
-        <div className="text-blue-500 text-4xl">
+        <div className="text-blue-500 text-4xl text-center">
           Thanks For Shopping With Us
         </div>
         <Link to="/products" className="underline">
