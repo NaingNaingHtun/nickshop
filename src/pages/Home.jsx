@@ -7,6 +7,7 @@ import PrimaryButton from "../components/PrimaryButton";
 import Products from "../components/Products";
 import api from "../api";
 import { useTrail, animated } from "react-spring";
+import { useNavigate } from "react-router-dom";
 const Trail = ({ open, children }) => {
   const styles = [
     "text-4xl underline",
@@ -40,7 +41,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const localeTime = new Date().toLocaleTimeString(); //"00:00:00 PM"
-  const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
   //=============FUNCTIONS============
   const getBestSellings = async () => {
     setLoading(true);
@@ -76,7 +77,7 @@ const Home = () => {
         }}
       >
         <div className="absolute flex flex-col gap-5 justify-center items-start p-5 md:p-[50px] top-0 left-0 w-[100%] h-[100%] ">
-          <Trail open={open}>
+          <Trail open={true}>
             <span>
               Hi,{" "}
               {localeTime.split(" ")[1] === "AM"
@@ -92,7 +93,7 @@ const Home = () => {
               home and order it. We will be right there in a minute.
             </span>
           </Trail>
-          <PrimaryButton onClick={() => (window.location.href = "/products")}>
+          <PrimaryButton onClick={() => navigate("/products")}>
             Shop Now
           </PrimaryButton>
         </div>
