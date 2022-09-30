@@ -161,7 +161,7 @@ const Navbar = () => {
             />
             <h1
               className="hidden md:block flex-1 text-center logo-font text-3xl font-extrabold cursor-pointer"
-              onClick={() => (window.location.href = "/")}
+              onClick={() => navigate("/")}
             >
               Nick Shop
             </h1>
