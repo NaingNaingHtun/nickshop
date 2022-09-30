@@ -4,7 +4,7 @@ import SecondaryButton from "./SecondaryButton";
 
 const BestSellingItem = ({ item }) => {
   const navigate = useNavigate();
-  return (
+  return !item ? null : (
     <div className="relative flex-0 md:flex-1 w-[100vw] h-[250px] md:h-[400px] hover:scale-105 transition-all  hover:z-[999]">
       <img
         src={item.image}
