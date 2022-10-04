@@ -17,3 +17,10 @@ This project was mainly created with React, Node, Express and MongoDB. It is a s
 - and others react components libraries
 
 No payment method is addded to this project so feel free to test it yourself.
+
+## Pre-existed users credentials
+user_6@gmail.com = user6
+user_7@gmail.com = user7
+user_8@gmail.com = user8
+user_9@gmail.com = user9
+user_10@gmail.com = user10
